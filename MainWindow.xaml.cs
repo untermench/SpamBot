@@ -31,7 +31,7 @@ namespace spam
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             first:
-            MailAddress from = new MailAddress("k_aguero@list.ru", "Учет обучающихся колледжа");
+            MailAddress from = new MailAddress("k_aguero@list.ru", "卐Виталику卐");
             MailAddress to = new MailAddress(mailBox.Text);
             MailMessage m = new MailMessage(from, to);
             m.Subject = "Лох";
