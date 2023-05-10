@@ -4,11 +4,32 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:spam"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        mc:Ignorable="d" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen"
+        Title="Спамер" Height="435" Width="738">
     <Grid>
-        <TextBox x:Name="mailBox" HorizontalAlignment="Center" Margin="0,179,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Button" HorizontalAlignment="Center" Margin="0,202,0,0" VerticalAlignment="Top" Click="Button_Click"/>
-
+        <Image gif:ImageBehavior.AnimatedSource="Images/rudge.gif" Height="415" VerticalAlignment="Center" HorizontalAlignment="Center" Width="738"/>
+        <StackPanel HorizontalAlignment="Center" >
+            <StackPanel Orientation="Vertical" Margin="0,158,0,0">
+                <Label  Content="Почта" Foreground="White"/>
+                <TextBox x:Name="mailBox" Height="25" Width="250" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Margin="0,15,0,0" >
+                    <Label Foreground="White" Content="Кол-во сообщений" HorizontalAlignment="Center"/>
+                    <TextBox Text="1" x:Name="CountBox" Height="25" Width="60" TextAlignment="Center" FontSize="16"/>
+                </StackPanel>
+                <StackPanel Margin="0,15,0,0">
+                    <Label Foreground="White" Content="Интвервал(в секундах)" HorizontalAlignment="Center"/>
+                    <TextBox Text="1" x:Name="TickBox" Height="25" Width="60" TextAlignment="Center" FontSize="16"/>
+                </StackPanel>
+            </StackPanel>
+            <Button x:Name="SpamButton" Content="Спам" Height="30" Width="100" HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+            <Label HorizontalAlignment="Center">
+                <Hyperlink x:Name="SettingsButton" Click="SettingsButton_Click" Foreground="White">
+                    Настройки
+                </Hyperlink>
+            </Label>
+        </StackPanel>
     </Grid>
 </Window>
